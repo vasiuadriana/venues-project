@@ -1,0 +1,37 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<h3>Venues</h3>
+
+<h4>User Selection</h4>
+<ul>
+    {% for user in users %}
+    <li>{{ user }}</li>
+    {% endfor %}
+</ul>
+
+<h4>Places to go</h4>
+<ul>
+    {% for venue in venues['safe'] %}
+    <li>{{venue}}</li>
+    {% endfor %}
+</ul>
+
+<h4>Places to avoid</h4>
+<ul>
+    {% for venue_name, venue_data in venues['to_avoid'].items() %}
+    <li>
+        {{ venue_name }}
+        <ul>
+            {% if venue_data['nothing_to_eat'] %}
+                <li>There is nothing for {{ ",".join(venue_data['nothing_to_eat']) }} to eat</li>
+            {% endif %}
+            {% if venue_data['nothing_to_drink'] %}
+                <li>There is nothing for {{ ",".join(venue_data['nothing_to_drink']) }} to drink</li>
+            {% endif %}
+        </ul>
+    </li>
+
+    {% endfor %}
+</ul>
+
+{% endblock %}

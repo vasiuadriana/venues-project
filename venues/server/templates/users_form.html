@@ -1,0 +1,9 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+<h1>Please choose some users</h1>
+
+<form method="POST" action="/">
+    <div>{{ form.users_select }}</div>
+    <button type="submit" class="btn">Submit</button>
+</form>
+{% endblock %}
