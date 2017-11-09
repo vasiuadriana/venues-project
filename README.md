@@ -30,7 +30,7 @@ for the venues selector service.
 - for a very minimal design improvement it uses the library `Flask-Bootstrap`
 - the state of the app is maintained in memory using a pattern of loading the feed data at startup. I am using the concept 
 of Flask Application Context
-- the input for this app is considered to be json so no trailing comas are allowed. Also, the assumption is that the json has a specific format and is a location which is known to the app, 
+- the input for this app is considered to be json so no trailing comas are allowed. Also, the assumption is that the json has a specific format and is in a location which is known to the app, 
 otherwise the app will fail at startup. In a production application you would probably have a mechanism that validates and publishes this data accordingly.
 - for simplicity all the libraries needed for this app to be run and tested are in the same file: `requirements.txt` but in a production
 app you would separate those dependencies so that you don't install testing libraries on the production server
